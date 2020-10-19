@@ -1,0 +1,35 @@
+.author {
+    padding-bottom: 210px;
+    position: relative;
+
+    &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: -52px;
+        right: -175px;
+        width: 790px;
+        height: 1122px;
+        background: url('../img/photo.png') no-repeat right center;
+        z-index: 10;
+    }
+
+    &__title {
+        &:extend(.title-2);
+        padding-left: 140px;
+
+        &:after {
+            &:extend(.title-2-after);
+            left: -310px;
+        }
+    }
+
+    &__desc {
+        max-width: 499px;
+        padding-left: 15px;
+    }
+
+    &__desc p {
+        margin-bottom: 27px;
+    }
+}
