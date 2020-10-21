@@ -2,9 +2,22 @@
 
     &__container {
         &:after {
+            &:extend(.container:after);
             top: 0;
             left: 223px;
             background: url('../img/bg-header.png') no-repeat right top;
+
+            .xmd-block({
+                left: 150px;
+            });
+
+            .md-block({
+                left: 30px;
+            });
+
+            .xs-block({
+                display: none;
+            });
         }
     }
 }
@@ -18,12 +31,35 @@
         padding-bottom: 370px;
     });
 
+    .mmd-block({
+        padding-top: 250px;
+        padding-bottom: 270px;
+    });
+
+    .xmd-block({
+        padding-top: 160px;
+        padding-bottom: 205px;
+    });
+
     &__list {
         width: 450px;
+
+        .xmd-block({
+            width: 320px;
+        });
+
+        .xs-block({
+            width: 100%;
+            margin: 0 auto;
+        });
 
         & li {
             margin-bottom: 50px;
             text-align: center;
+
+            .xs-block({
+                margin-bottom: 36px;
+            });
         }
 
         & li a {
@@ -33,6 +69,10 @@
             color: @text;
             position: relative;
             z-index: 10;
+
+            .xmd-block({
+                font-size: 26px;
+            });
     
             &:before,
             &:after {
@@ -73,23 +113,50 @@
             display: block;
             content: "";
             position: absolute;
-            width: 6px;
+            width: 16px;
             background:  rgba(255, 204, 204, 0.5);
             left: 222px;
             border-radius: 3px;
+
+            .xmd-block({
+                left: 152px;
+            });
+
+            .xs-block({
+                left: 50%;
+                transform: translateX(-50%);
+            });
         }
 
         &:before {
-            height: 346px;
+            height: 355px;
             top: 0;
+            background: url('../img/decor-menu-up.png') no-repeat center center;
 
             .hmd-block({
                 top: -18px;
             });
+
+            .mmd-block({
+                top: -150px;
+            });
+
+            .xmd-block({
+                top: -230px;
+            });
         }
 
         &:after {
-            height: 246px;
+            height: 250px;
+            background: url('../img/decor-menu-up.png') no-repeat center center;
+
+            .mmd-block({
+                height: 180px;
+            });
+
+            .xmd-block({
+                height: 115px;
+            });
         }
     }
 }
@@ -101,18 +168,45 @@
         &:extend(.title-2);
         padding-left: 90px;
 
+        .xmd-block({
+            padding-left: 77px;
+        });
+
         &:after {
+            width: 320px;
+            background: url('../img/h2-1.png') no-repeat center center;
             &:extend(.title-2-after);
-            left: -365px;
+            left: -292px;
+
+            .xmd-block({
+                left: -260px;
+            });
+
+            .xs-block({
+                left: -266px;
+            });
         }
     }
 
     &__book {
-       display: flex;
-       justify-content: center;
-       position: relative;
-       z-index: 25;
-       margin-bottom: 60px;
+        width: 1000px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        z-index: 25;
+        margin: 0 auto 60px;
+
+        .mmd-block({
+            width: 860px;
+        });
+
+        .md-block({
+            width: 90%;
+        });
+
+        .xs-block({
+            width: 100%;
+        });
     }
 
     &__btn {
@@ -132,6 +226,10 @@
         }
     }
 
+    &__shadow {
+        &:extend(.btn-shadow);
+    }
+
     &__link {
         &:extend(.link);
 
@@ -143,8 +241,15 @@
 
 .presentation__link:hover+.presentation__bg:before {
     opacity: 0;
+    transform: translateY(12px);
 }
 
 .presentation__link:hover+.presentation__bg:after {
     opacity: 1;
+    transform: translateY(12px);
+}
+
+.presentation__link:hover+.presentation__bg+.presentation__shadow {
+    opacity: 0;
+    transform: translateY(12px);
 }

@@ -2,9 +2,14 @@
 
     &__container {
         &:after {
+            &:extend(.container:after);
             top: 0;
             left: 223px;
             background: url('../img/bg-main.png') no-repeat right center;
+
+            .xmd-block({
+                display: none;
+            });
         }
     }
 

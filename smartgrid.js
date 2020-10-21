@@ -8,8 +8,20 @@ module.exports = {
 	breakPoints: {
         hmd: {
 			width: "1920px"
-		},
+        },
+        lmd: {
+			width: "1850px"
+        },
         bmd: {
+			width: "1750px"
+		},
+        smd: {
+			width: "1650px"
+        },
+        mmd: {
+			width: "1450px"
+        },
+        xmd: {
 			width: "1200px"
 		},
 		md: {

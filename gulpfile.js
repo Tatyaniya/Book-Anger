@@ -68,6 +68,21 @@ function fa() {
         .pipe(gulp.dest('./build/fa'));
 }
 
+function pdf() {
+    return gulp.src('./src/*.pdf')
+        .pipe(gulp.dest('./build'));
+}
+
+function php() {
+    return gulp.src('./src/success.php')
+        .pipe(gulp.dest('./build'));
+}
+
+function leads() {
+    return gulp.src('./src/leads.xls')
+        .pipe(gulp.dest('./build'));
+}
+
 function scripts(){
 	return gulp.src('./src/js/**/*')
 				.pipe(gulp.dest('./build/js'));
@@ -96,7 +111,7 @@ function grid(done){
 	done();
 }
 
-let build = gulp.parallel(html, styles, images, fonts, webfonts, fa, scripts, txt);
+let build = gulp.parallel(html, styles, images, fonts, webfonts, fa, pdf, php, leads, scripts, txt);
 let buildWithClean = gulp.series(clean, build);
 let dev = gulp.series(buildWithClean, watch);
 
