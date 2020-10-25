@@ -1084,6 +1084,7 @@ textarea.error {
   #name-error,
   #mail-error,
   #text-error {
+    font-size: 16px;
     top: 50px;
   }
 
@@ -1161,5 +1162,12 @@ textarea.error {
   .footer__list {
     width: 100%;
     justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .presentation__book {
+    width: 290px;
+    height: 163px;
   }
 }
